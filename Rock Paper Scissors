@@ -1,0 +1,58 @@
+
+import random
+def checkGame(round, PlayerScore, BotScore):
+    round=(input("How many points to win? "))
+    round=int(round)
+
+    print("1 for Rock, 2 for Paper, 3 for Scissors")
+    while PlayerScore != round and BotScore != round:
+        print('\n')
+        print('Player Score- ' + str(PlayerScore))
+        print('Game Score- ' + str(BotScore))
+        print('First to '+ str(round))
+        print('\n')
+        user=int(input("Choose- "))
+        bot=random.randint(1,3)
+        if(user==1 and bot == 1):
+            print('You chose Rock, Game chose Rock')
+            print('Tie')
+        elif(user==2 and bot==1):
+            print('You chose Paper, Game chose Rock')
+            print('You get a point')
+            PlayerScore+=1
+        elif(user==3 and bot== 1):
+            print('You chose Scissors, Game chose Rock')
+            print('Game gets a point')
+            BotScore+=1
+        elif(user==1 and bot == 2):
+            print('You chose Rock, Game chose Paper')
+            print('Game gets a point')
+            BotScore+=1
+        elif(user==2 and bot==2):
+            print('You chose Paper, Game chose Paper')
+            print('Tie')
+        elif(user==3 and bot== 2):
+            print('You chose Scissors, Game chose Paper')
+            print('You get a point')
+            PlayerScore+=1
+        elif(user==1 and bot == 3):
+            print('You chose Rock, Game chose Scissors')
+            print('You get a point')
+            PlayerScore+=1
+        elif(user==2 and bot==3):
+            print('You chose Paper, Game chose Scissors')
+            print('Game gets a point')
+            BotScore+=1
+        elif(user==3 and bot== 3):
+            print('You chose Scissors, Game chose Scissor')
+            print('Tie')
+        if PlayerScore==round:
+            print('\n')
+            print('-----YOU WIN-----')
+            print('\n')
+        elif(BotScore==round):
+            print('\n')
+            print('----GAME WINS-----')
+            print('\n')
+    
+checkGame(0,0,0)
